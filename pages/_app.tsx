@@ -1,6 +1,16 @@
-import '../styles/globals.css'
-import type { AppProps } from 'next/app'
+import "../styles/globals.css";
+import type { AppProps } from "next/app";
+import { AbbyProvider, withAbby } from "../src/abby";
 
-export default function App({ Component, pageProps }: AppProps) {
-  return <Component {...pageProps} />
+function App({
+  Component,
+  pageProps: { __ABBY_PROJECT_DATA__, ...pageProps },
+}: AppProps) {
+  return (
+    <AbbyProvider initialData={__ABBY_PROJECT_DATA__}>
+      <Component {...pageProps} />
+    </AbbyProvider>
+  );
 }
+
+export default withAbby(App);
