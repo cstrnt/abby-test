@@ -10,11 +10,11 @@ export const { useAbby, AbbyProvider, useFeatureFlag, withAbby } = createAbby({
     },
   },
   flags: ['showFooter'],
-  settings: {
-    flags: {
-      devOverrides: {
-        showFooter: true,
-      }
-    }
-  }
+  // settings: {
+  //   flags: {
+  //     devOverrides: {
+  //       showFooter: true,
+  //     }
+  //   }
+  // }
 });
