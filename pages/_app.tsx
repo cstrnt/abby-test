@@ -1,6 +1,6 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { AbbyProvider, withAbby } from "../src/abby";
+import { AbbyDevTools, AbbyProvider, withAbby } from "../src/abby";
 
 function App({
   Component,
@@ -8,6 +8,7 @@ function App({
 }: AppProps) {
   return (
     <AbbyProvider initialData={__ABBY_PROJECT_DATA__}>
+      <AbbyDevTools />
       <Component {...pageProps} />
     </AbbyProvider>
   );
